@@ -371,7 +371,6 @@ public class RedesController {
    String msgErr = e.getMessage();
 
    System.err.println(msgErr);
-   System.out.println("");
 
   }
 
