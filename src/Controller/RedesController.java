@@ -49,7 +49,6 @@ public class RedesController {
    ip = "ipconfig";
 
    callProcess(ip);
-
    
 
   }
@@ -310,13 +309,48 @@ public class RedesController {
 
      linha = buffer.readLine();}
 
+    else if (process.contains("ipconfig")) {
+    	
+    		if(linha.contains("Adaptador")) {
+    			String adp = linha;
+    			linha = buffer.readLine();
+    			linha = buffer.readLine();
+    			
+    			
+    			while(linha != null) {
+    			
+    			if(linha.contains("Adaptador")) {
+    	    			adp = linha;
+    	    	}
+    			else if(linha.contains("IPv4")) {
+    				System.out.println(adp+"\n");
+    				System.out.println(linha+"\n");
+    			}
+    			else {
+    				System.out.print("");
+    			}
+    			
+    			linha = buffer.readLine();
+    			
+    			}
+    		}
+    		
+
+    		else{
+
+    			System.out.print("");
+
+    		}
+    		linha = buffer.readLine();
+    	}
+    
+    
     else {
 
-    System.out.println(linha);
+    	System.out.println(linha);
 
     
-
-    linha = buffer.readLine();
+   		linha = buffer.readLine();
 
    
 
